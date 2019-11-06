@@ -12,8 +12,8 @@ class ProcessController(
         private  val camundaService: CamundaService
 ) {
     @GetMapping("/start/processKey/{processKey}/businessKey/{businessKey}")
-    fun getBook(@PathVariable processKey: String, @PathVariable businessKey: String): String =
-        camundaService.startProcessByProcessKey(processKey = processKey, businessKey = businessKey).id
+    fun startProcess(@PathVariable processKey: String, @PathVariable businessKey: String): ProcessInstance =
+        camundaService.startProcessByProcessKey(processKey = processKey, businessKey = businessKey)
     //TODO ошибка в десереализации инстанса! ПОчему то нельзя вывести ProcessInstance
 
     @PutMapping("/sendMessage/name/{name}/businessKey/{businessKey}")

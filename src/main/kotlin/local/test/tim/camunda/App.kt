@@ -21,7 +21,7 @@ open class App(
 
 
     @EventListener
-    private fun start(event: PostDeployEvent) {
+    fun start(event: PostDeployEvent) {
         log.info { "startProcessInstanceByKey : loanApproval " }
         runtimeService.startProcessInstanceByKey("loanApproval", "123")
 
